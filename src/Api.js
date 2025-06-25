@@ -9,7 +9,7 @@ const unsplash = axios.create({
   },
 });
 
-export const fetchImages = async (query, page = 1, perPage = 10) => {
+export const fetchImages = async (query, page = 1, perPage = 12) => {
   try {
     const response = await unsplash.get("/search/photos", {
       params: {

@@ -2,9 +2,9 @@ import React from "react";
 
 const ErrorMessage = () => {
   return (
-    <div>
-      <p>Hata!!!</p>
-    </div>
+    <p style={{ color: "red", textAlign: "center" }}>
+      Bir hata oluştu. Lütfen tekrar deneyin.
+    </p>
   );
 };
 

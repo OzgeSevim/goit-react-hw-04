@@ -1,7 +1,9 @@
 import React from "react";
 
 const Loader = () => {
-  return <div>Loader</div>;
+  return (
+    <p style={{ textAlign: "center", marginTop: "20px" }}>🔄 Yükleniyor...</p>
+  );
 };
 
 export default Loader;

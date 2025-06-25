@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import styles from "./SearchBar.module.css";
+import { FaSearch } from "react-icons/fa"; // Font Awesome büyüteç ikonu
 
 const SearchBar = ({ onSubmit }) => {
   const [input, setInput] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim() === "") {
@@ -16,20 +19,22 @@ const SearchBar = ({ onSubmit }) => {
   const handleChange = (e) => {
     setInput(e.target.value);
   };
+
   return (
-    <div>
-      <header>
-        <form onSubmit={handleSubmit}>
-          <input
-            value={input}
-            onChange={handleChange}
-            type="text"
-            placeholder="Search images and photos"
-          />
-          <button type="submit">Search</button>
-        </form>
-      </header>
-    </div>
+    <header className={styles.header}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <button type="submit" className={styles.searchIcon}>
+          <FaSearch size={16} color="#007acc" />
+        </button>
+        <input
+          value={input}
+          onChange={handleChange}
+          type="text"
+          placeholder="Search images and photos"
+          className={styles.input}
+        />
+      </form>
+    </header>
   );
 };
 
